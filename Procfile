@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT proxy-flask:app
+web: gunicorn -b :$PORT app:app
