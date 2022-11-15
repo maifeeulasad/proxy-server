@@ -8,7 +8,7 @@ port = int(os.environ.get('PORT', 5000))
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/proxy", methods=["POST"])
+@app.route("/proxy", methods=["POST"], strict_slashes=False)
 @cross_origin()
 def read_and_send():
         url = request.get_json()["url"]
@@ -16,7 +16,7 @@ def read_and_send():
         html = res.text
         return Response(html, mimetype='text/html')
 
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["GET"], strict_slashes=False)
 def readme():
         with open('./README.md','r') as readme:
                 return Response(readme.read(), mimetype='text/markdown')
