@@ -1,6 +1,9 @@
 from flask import Flask, Response, request
 from flask_cors import CORS, cross_origin
 import requests
+import os
+
+port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 CORS(app)
@@ -14,4 +17,4 @@ def read_and_send():
         return Response(html, mimetype='text/html')
 
 if __name__ == "__main__":
-        app.run()
+        app.run(host='0.0.0.0', port=port)
