@@ -18,8 +18,8 @@ def read_and_send():
 
 @app.route("/", methods=["GET"], strict_slashes=False)
 def readme():
-        with open('./README.md','r') as readme:
-                return Response(readme.read(), mimetype='text/markdown')
+        with open('./README.html','r') as readme:
+                return Response(readme.read(), mimetype='text/html')
 
 if __name__ == "__main__":
         app.run(host='0.0.0.0', port=port, debug = True)
