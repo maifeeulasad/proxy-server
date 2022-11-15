@@ -11,5 +11,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # https://github.com/marketplace/actions/deploy-to-heroku
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "proxy-server"
+          heroku_app_name: "proxy-server-mua"
           heroku_email: "maifeeulasad@gmail.com"
